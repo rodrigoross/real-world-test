@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid'
 export default {
   data() {
     return {
@@ -54,32 +54,32 @@ export default {
         'housing',
         'education',
         'food',
-        'community',
+        'community'
       ],
-      event: this.freshEventObject(),
-    };
+      event: this.freshEventObject()
+    }
   },
   methods: {
     onSubmit() {
       this.$store
         .dispatch('createEvent', this.event)
         .then(() => {
-          this.freshEventObject(); // correct placement?
+          this.freshEventObject() // correct placement?
           this.$router.push({
             name: 'EventDetails',
-            params: { id: this.event.id },
-          });
+            params: { id: this.event.id }
+          })
         })
         .catch(error => {
           this.$router.push({
             name: 'ErrorDisplay',
-            params: { error: error },
-          });
-        });
+            params: { error: error }
+          })
+        })
     },
     freshEventObject() {
-      const id = uuidv4();
-      const user = this.$store.state.user;
+      const id = uuidv4()
+      const user = this.$store.state.user
 
       return {
         id: id,
@@ -89,9 +89,9 @@ export default {
         location: '',
         date: '',
         time: '',
-        organizer: user,
-      };
-    },
-  },
-};
+        organizer: user
+      }
+    }
+  }
+}
 </script>

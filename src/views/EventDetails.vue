@@ -13,14 +13,14 @@ export default {
     this.$store.dispatch('fetchEvent', this.id).catch(error => {
       this.$router.push({
         name: 'ErrorDisplay',
-        params: { error: error },
-      });
-    });
+        params: { error: error }
+      })
+    })
   },
   computed: {
     event() {
-      return this.$store.state.event;
-    },
-  },
-};
+      return this.$store.state.event
+    }
+  }
+}
 </script>
