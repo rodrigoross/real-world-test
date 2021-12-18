@@ -6,28 +6,27 @@
 </template>
 
 <script>
-import EventCard from '@/components/EventCard.vue'
+import EventCard from '@/components/EventCard.vue';
 
 export default {
   name: 'EventList',
   components: {
-    EventCard
+    EventCard,
   },
   created() {
-    this.$store.dispatch('fetchEvents')
-    .catch(error => {
+    this.$store.dispatch('fetchEvents').catch(error => {
       this.$router.push({
         name: 'ErrorDisplay',
-        params: { error: error }
-      })
-    })
+        params: { error: error },
+      });
+    });
   },
   computed: {
     events() {
-      return this.$store.state.events
-    }
-  }
-}
+      return this.$store.state.events;
+    },
+  },
+};
 </script>
 
 <style scoped>
