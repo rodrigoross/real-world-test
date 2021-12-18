@@ -7,7 +7,7 @@
       v-for="event in events"
       :key="event.id"
     >
-      <EventCard :event="event" />
+      <EventCard data-testid="event" :event="event" />
     </router-link>
   </div>
 </template>
@@ -41,5 +41,10 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.event-link {
+  color: #2c3e50;
+  text-decoration: none;
 }
 </style>
