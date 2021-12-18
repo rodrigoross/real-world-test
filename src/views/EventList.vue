@@ -1,5 +1,5 @@
 <template>
-  <h1>Events for Good</h1>
+  <h1 data-testid="event-list-title">Events for Good</h1>
   <div class="events">
     <router-link
       class="event-link"
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import EventCard from '@/components/EventCard.vue';
+import EventCard from '@/components/EventCard.vue'
 
 export default {
   name: 'EventList',
@@ -25,15 +25,15 @@ export default {
       this.$router.push({
         name: 'ErrorDisplay',
         params: { error: error }
-      });
-    });
+      })
+    })
   },
   computed: {
     events() {
-      return this.$store.state.events;
+      return this.$store.state.events
     }
   }
-};
+}
 </script>
 
 <style scoped>
